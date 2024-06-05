@@ -16,7 +16,7 @@ jobs:
       uses: trufflesecurity/trufflehog@v3.2.0
       with:
         entryPoint: 'trufflehog'
-        args: 'git --repo . --rules-file pii-rules.json --json --jsonfile results.json'
+        args: 'filesystem --directory . --rules-file pii-rules.json --json --jsonfile results.json'
 
     - name: Print results
       run: cat results.json
