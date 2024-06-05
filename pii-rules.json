@@ -1,4 +1,12 @@
-{
-  "aadhaar": "\\b[2-9]{1}[0-9]{3}\\s[0-9]{4}\\s[0-9]{4}\\b",
-  "pan": "[A-Z]{5}[0-9]{4}[A-Z]{1}"
-}
+[
+  {
+    "name": "Aadhaar Number",
+    "regex": "\\b\\d{4}\\s\\d{4}\\s\\d{4}\\b|\\b\\d{12}\\b",
+    "reason": "Potential Aadhaar number"
+  },
+  {
+    "name": "PAN Number",
+    "regex": "\\b[A-Z]{5}\\d{4}[A-Z]{1}\\b",
+    "reason": "Potential PAN number"
+  }
+]
