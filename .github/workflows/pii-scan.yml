@@ -9,12 +9,14 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+      with:
+        path: .
 
     - name: Run TruffleHog
       uses: trufflesecurity/trufflehog@v3.2.0
       with:
         entryPoint: 'trufflehog'
-        args: 'filesystem --directory . --rules-file pii-rules.json --json --jsonfile results.json'
+        args: 'git --repo . --rules-file pii-rules.json --json --jsonfile results.json'
 
     - name: Print results
       run: cat results.json
